@@ -2,13 +2,17 @@ Feature: Redirection
   Background:
     Given Open "https://www.tdameritrade.com" site
 
-  Scenario Outline: Collect all links from home and print name of each displayed link
+  Scenario: Collect all links from home and print name of each displayed link
     Then Collect all links and print links titles
-    Then Verify when user click on link "<link_name>" he redirects to the correct page "<req_page_title>"
 
+
+
+  Scenario Outline: Verify that user was redirected on correct page
+    Then Verify when user click on link "<link_name>" he redirects to the correct page "<req_page_title>"
+    
     Examples:
-      | link_name           | req_page_title                       |
-      | Account Types       | Investment Account Types             |
+      | link_name           | req_page_title                   |
+      | Account Types       | Investment Account Types         |
 
       | Funding & Transfers | Electronic Funding and Transfers |
 
@@ -16,8 +20,19 @@ Feature: Redirection
 
       | Need Login Help?    | Log on Help                      |
 
-      | Service            | Investor Services                |
-
+      | Service             | Investor Services                |
+#
+#  Account Types
+#
+#  Funding & Transfers
+#
+#  Open New Account
+#
+#  Need Login Help?
+#
+#  TD Ameritrade
+#
+#  Service
 #
 #  Tools & Platforms
 #
@@ -56,6 +71,8 @@ Feature: Redirection
 #  Trade
 #
 #  Open new account
+#
+#
 #
 #  Open New Account
 #
